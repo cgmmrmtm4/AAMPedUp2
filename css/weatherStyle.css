@@ -1,0 +1,203 @@
+body {
+    width: 100%;
+    padding: 0px;
+    /**border: 3px solid green;**/
+    margin: auto;
+}
+
+.mainHeader {
+    width: 100%;
+    margin: auto;
+    font-size: 80px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-top: 25px;
+    text-align: center;
+    color: white;
+    /*background-color: rgb(39, 79, 190);*/
+    background-color: rgb(100, 128, 206, 1);
+}
+
+.allTen {
+    font-size: 55px;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 0px;
+    padding-top: 0px;
+    text-align: center;
+    text-shadow: 2px 2px 4px #000000;
+    color: gainsboro;
+    background-color: rgb(255, 255, 255);
+    /*background-image: url("https://s8149.pcdn.co/wp-content/uploads/2013/08/villageNight-923x372.jpg");*/
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin: 0px;
+}
+
+.city0 {
+    background-image: url("../img/newnipomo.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.city1 {
+    background-image: url("https://s8149.pcdn.co/wp-content/uploads/2013/08/villageNight-923x372.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.city2 {
+    background-image: url("https://ihg.scene7.com/is/image/ihg/holiday-inn-express-grover-beach-4364470448-2x1");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.city3 {
+    background-image: url("https://www.planetware.com/photos-large/USCA/san-luis-obispo-oceano-dunes.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.city4 {
+    background-image: url("https://media.sabrecdn.com/dolphinbay/application/files/5414/6117/8626/Property_Aerial.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.city5 {
+    background-image: url("https://odis.homeaway.com/odis/destination/2b42e4ca-a389-4336-8f7b-3b5464391cd6.hw1.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.city6 {
+    background-image: url("http://www.evansstreetstation.com/wp-content/uploads/2018/08/cass-vineyard.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.city7 {
+    background-image: url("https://slochamber.org/wp-content/uploads/2014/10/CalPolyPeaks_4148.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.city8 {
+    background-image: url("https://www.morro-bay.ca.us/ImageRepository/Document?documentID=9062");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.city9 {
+    background-image: url("https://www.cityofsantamaria.org/Home/ShowImage?id=248&t=635555543502070000");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+footer {
+    font: size 30;
+    ;
+    font-family: Arial, Helvetica, sans-serif;
+    padding-bottom: 25px;
+    padding-top: 25px;
+    text-align: center;
+    color: white;
+    background-color: rgb(100, 128, 206, 1);
+    margin: 0px;
+}
+
+.transbox {
+    margin: 30px;
+    background-color: #151414;
+    border: 1px solid black;
+    opacity: 0.8;
+    width: 37%;
+    height: 250px;
+    filter: alpha(opacity=30);
+    margin: auto;
+    border-radius: 100px;
+}
+
+.temperature {
+    font-size: 50px;
+    text-shadow: 2px 2px 4px #000000;
+    margin: 0 0 0 0;
+}
+
+.humidity {
+    font-size: 15px;
+    text-shadow: 2px 2px 4px #000000;
+    margin: 0;
+}
+
+.pressure {
+    font-size: 15px;
+    text-shadow: 2px 2px 4px #000000;
+    margin: 0;
+}
+
+.tempMin {
+    font-size: 15px;
+    text-shadow: 2px 2px 4px #000000;
+    margin: 0;
+}
+
+.tempMax {
+    font-size: 15px;
+    text-shadow: 2px 2px 4px #000000;
+    margin: 0;
+}
+
+.windSpeed {
+    margin: 35px 0 0 0;
+    font-size: 20px;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+.windDirection {
+    font-size: 15px;
+    text-shadow: 2px 2px 4px #000000;
+    margin: 0;
+}
+
+.rain {
+    font-size: 15px;
+    text-shadow: 2px 2px 4px #000000;
+    margin: 0;
+}
+
+.snow {
+    font-size: 15px;
+    text-shadow: 2px 2px 4px #000000;
+    margin: 0;
+}
+
+#tempDiv {
+    height: 200px;
+    width: 235px;
+    position: relative;
+    float: left;
+    display: block;
+}
+
+#windDiv {
+    height: 200px;
+    width: 235px;
+    position: relative;
+    float: right;
+    display: block;
+}
+
+#humPressureDiv {
+    height: 50px;
+    width: 235px;
+    position: relative;
+    float: left;
+    display: block;
+}
+
+#rainAndSnowDiv {
+    height: 50px;
+    width: 235px;
+    position: relative;
+    float: right;
+    display: block;
+}
