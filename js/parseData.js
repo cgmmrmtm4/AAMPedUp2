@@ -345,6 +345,8 @@ const weatherData = {
     ]
 };
 
+let showMetric = false;
+
 function getCityData(city) {
     let cityIdName;
     let cityDiv;
@@ -366,6 +368,8 @@ function getCityData(city) {
     let cityRainLevel;
     let snowLevel;
     let citySnowLevel;
+    let iconDirection;
+    let cityIconWind;
 
     for (let key in weatherData) {
         //access the keys
@@ -385,7 +389,11 @@ function getCityData(city) {
             //ADD TEMPERATURE TO CITY TABLE
             cityTemperature = "cityTemperature" + i;
             cityTemp = document.getElementById(cityTemperature);
-            cityTemp.innerHTML = listData.main.temp + " ℉";
+            if (!showMetric) {
+                cityTemp.innerHTML = listData.main.temp + " ℉";
+            } else {
+                cityTemp.innerHTML = Math.round(((listData.main.temp - 32)* 5/9) *100) / 100 + " °C";
+            }
 
             //ADD HUMIDITY TO CITY TABLE
             humidity = "cityHumidity" + i;
@@ -395,28 +403,47 @@ function getCityData(city) {
             //ADD PRESSURE TO CITY TABLE
             pressure = "cityPressure" + i;
             cityPressure = document.getElementById(pressure);
-            cityPressure.innerHTML = "Pressure: " + Math.round((listData.main.pressure / 33.8639) * 100) / 100 + " inHg";
+            if (!showMetric) {
+                cityPressure.innerHTML = "Pressure: " + Math.round((listData.main.pressure / 33.8639) * 100) / 100 + " inHg";
+            } else {
+                cityPressure.innerHTML = "Pressure: " + listData.main.pressure + " mB";
+            }
 
             //ADD TEMP MIN TO CITY TABLE
             tempMin = "cityTempMin" + i;
             cityTempMin = document.getElementById(tempMin);
-            cityTempMin.innerHTML = "Min: " + listData.main.temp_min + " ℉";
+            if (!showMetric) {
+                cityTempMin.innerHTML = "Min: " + listData.main.temp_min + " ℉";
+            } else {
+                cityTempMin.innerHTML = "Min: " + Math.round(((listData.main.temp_min - 32)* 5/9) *100) / 100 + " °C";
+            }
 
             //ADD TEMP MAX TO CITY TABLE
             tempMax = "cityTempMax" + i;
             cityTempMax = document.getElementById(tempMax);
-            cityTempMax.innerHTML = "Max: " + listData.main.temp_max + " ℉";
+            if (!showMetric) {
+                cityTempMax.innerHTML = "Max: " + listData.main.temp_max + " ℉";
+            } else {
+                cityTempMax.innerHTML = "Max: " + Math.round(((listData.main.temp_max - 32)* 5/9) *100) / 100 + " °C";
+            }
 
             //ADD WIND SPEED TO CITY TABLE
             windSpeed = "cityWindSpeed" + i;
             cityWindSpeed = document.getElementById(windSpeed);
-            cityWindSpeed.innerHTML = "Wind Speed: " + listData.wind.speed + "mph";
+            if (!showMetric) {
+                cityWindSpeed.innerHTML = "Wind Speed: " + listData.wind.speed + "mph";
+            } else {
+                cityWindSpeed.innerHTML = "Wind Speed: " + Math.round((listData.wind.speed * 1.60934)*100) / 100 + "kph";
+            }
 
             //ADD WIND DIRECTION TO CITY TABLE
             windDirection = "cityWindDirection" + i;
             cityWindDirection = document.getElementById(windDirection);
+            iconDirection = "cityIconSpeed" + i;
+            cityIconWind = document.getElementById(iconDirection);
             //round to nearest integer
             roundedWindDirection = Math.round(listData.wind.deg);
+            cityIconWind.className = "wi wi-wind towards-" + roundedWindDirection + "-deg";
             //determine wind direction
             if (roundedWindDirection <= 22) {
                 cityWindDirection.innerHTML = "Wind Direction: N";
@@ -466,5 +493,19 @@ function getCityData(city) {
 }
 
 let cityData = getCityData("San Luis Obispo");
+
+let myBtn = document.getElementById("fToCButton");
+myBtn.addEventListener("click", function() {
+    let letter = myBtn.innerHTML;
+    if (letter === "F") {
+        myBtn.innerHTML = "C";
+        showMetric = true;
+        getCityData();
+    } else {
+        myBtn.innerHTML = "F";
+        showMetric = false;
+        getCityData();
+    }
+});
 
 //console.log(cityData);
