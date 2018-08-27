@@ -1,5 +1,6 @@
 body {
     width: 100%;
+    height: 800px;
     padding: 0px;
     /**border: 3px solid green;**/
     margin: auto;
@@ -137,6 +138,11 @@ footer {
     filter: alpha(opacity=30);
     margin: auto;
     border-radius: 100px;
+    display: flex;
+    max-height: 250px;
+    max-width: 500px;
+    min-width: 468px;
+    min-height: 250px;
 }
 
 .temperature {
@@ -201,8 +207,12 @@ footer {
     height: 200px;
     width: 235px;
     position: relative;
-    float: left;
+    /*float: left;*/
     display: block;
+    min-height: 200px;
+    min-width: 235px;
+    max-height: 210px;
+    max-width: 235px;
 }
 
 #tempDiv i {
@@ -217,8 +227,12 @@ footer {
     height: 200px;
     width: 235px;
     position: relative;
-    float: right;
+    /*float: right;*/
     display: block;
+    min-height: 200px;
+    min-width: 235px;
+    max-height: 210px;
+    max-width: 235px;
 }
 
 #windDiv i {
@@ -230,11 +244,17 @@ footer {
 }
 
 #humPressureDiv {
+    left: -470px;
+    top: 180px;
     height: 50px;
     width: 235px;
     position: relative;
-    float: left;
+    /*float: left;*/
     display: block;
+    min-height: 50px;
+    min-width: 235px;
+    max-height: 210px;
+    max-width: 235px;
 }
 
 #humPressureDiv p {
@@ -242,11 +262,17 @@ footer {
 }
 
 #rainAndSnowDiv {
+    left: -470px;
+    top: 180px;
     height: 50px;
     width: 235px;
     position: relative;
-    float: right;
+    /*float: right;*/
     display: block;
+    min-height: 50px;
+    min-width: 235px;
+    max-height: 210px;
+    max-width: 235px;
 }
 
 #rainAndSnowDiv p {
