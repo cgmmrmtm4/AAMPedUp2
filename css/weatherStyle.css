@@ -164,6 +164,12 @@ footer {
     margin: 0;
 }
 
+.timeStamp {
+    font-size: 15px;
+    text-shadow: 2px 2px 4px #000000;
+    margin: 0;
+}
+
 .tempMin {
     font-size: 15px;
     text-shadow: 2px 2px 4px #000000;
@@ -217,7 +223,8 @@ footer {
 }
 
 #tempDiv i {
-    margin-left: 50px;
+    margin-left: 40px;
+    font-size: 30px;
 }
 
 #tempDiv p {
