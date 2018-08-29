@@ -234,10 +234,10 @@ const weatherData = {
                 "all": 90
             },
             "weather": [{
-                "id": 701,
-                "main": "Mist",
-                "description": "mist",
-                "icon": "50d"
+                "id": 800,
+                "main": "Clear",
+                "description": "sky is clear",
+                "icon": "01d"
             }]
         },
         {
@@ -370,6 +370,13 @@ function getCityData(city) {
     let citySnowLevel;
     let iconDirection;
     let cityIconWind;
+    let iconId;
+    let cityIcon;
+    let dayNightIcon;
+    let dayNight;
+    let cityTime;
+    let cityTimeId;
+    let cityTimeStamp;
 
     for (let key in weatherData) {
         //access the keys
@@ -387,6 +394,16 @@ function getCityData(city) {
             cityDiv.innerHTML = listData.name;
 
             //ADD TEMPERATURE TO CITY TABLE
+            iconId = "cityIconTemperature" + i;
+            cityIcon = document.getElementById(iconId);
+            dayNightIcon = listData.weather[0].icon.slice(-1);
+            if (dayNightIcon === 'd') {
+                dayNight = 'day';
+            } else {
+                dayNight = 'night';
+            }
+            cityIcon.className = "wi wi-owm-" + dayNight + "-" + listData.weather[0].id;
+            cityIcon.innerHTML=listData.weather[0].main;
             cityTemperature = "cityTemperature" + i;
             cityTemp = document.getElementById(cityTemperature);
             if (!showMetric) {
@@ -404,10 +421,15 @@ function getCityData(city) {
             pressure = "cityPressure" + i;
             cityPressure = document.getElementById(pressure);
             if (!showMetric) {
-                cityPressure.innerHTML = "Pressure: " + Math.round((listData.main.pressure / 33.8639) * 100) / 100 + " inHg";
+                cityPressure.innerHTML = "Pressure: " + listData.main.pressure + " mbar";
             } else {
-                cityPressure.innerHTML = "Pressure: " + listData.main.pressure + " mB";
+                cityPressure.innerHTML = "Pressure: " + listData.main.pressure + " hPa";
             }
+
+            cityTime = new Date(listData.dt * 1000);
+            cityTimeId = "timeStamp" + i;
+            cityTimeStamp = document.getElementById(cityTimeId);
+            cityTimeStamp.innerHTML = cityTime.toDateString().substr(4) + " " + cityTime.toTimeString().slice(0,8);
 
             //ADD TEMP MIN TO CITY TABLE
             tempMin = "cityTempMin" + i;
@@ -433,7 +455,7 @@ function getCityData(city) {
             if (!showMetric) {
                 cityWindSpeed.innerHTML = "Wind Speed: " + listData.wind.speed + "mph";
             } else {
-                cityWindSpeed.innerHTML = "Wind Speed: " + Math.round((listData.wind.speed * 1.60934)*100) / 100 + "kph";
+                cityWindSpeed.innerHTML = "Wind Speed: " + Math.round((listData.wind.speed * 0.44704)*100) / 100 + " m/s";
             }
 
             //ADD WIND DIRECTION TO CITY TABLE
