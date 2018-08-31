@@ -1,533 +1,367 @@
-const weatherData = {
-    "message": "accurate",
-    "cod": "200",
-    "count": 10,
-    "list": [{
-            "id": 5377100,
-            "name": "Nipomo",
-            "coord": {
-                "lat": 35.0428,
-                "lon": -120.476
-            },
-            "main": {
-                "temp": 58.24,
-                "pressure": 1014,
-                "humidity": 87,
-                "temp_min": 55.4,
-                "temp_max": 60.8
-            },
-            "dt": 1534258560,
-            "wind": {
-                "speed": 3.49,
-                "deg": 338.504
-            },
-            "sys": {
-                "country": ""
-            },
-            "rain": null,
-            "snow": null,
-            "clouds": {
-                "all": 90
-            },
-            "weather": [{
-                "id": 701,
-                "main": "Mist",
-                "description": "mist",
-                "icon": "50d"
-            }]
-        },
-        {
-            "id": 5324802,
-            "name": "Arroyo Grande",
-            "coord": {
-                "lat": 35.1186,
-                "lon": -120.5908
-            },
-            "main": {
-                "temp": 58.62,
-                "pressure": 1014,
-                "humidity": 87,
-                "temp_min": 57.2,
-                "temp_max": 60.8
-            },
-            "dt": 1534258560,
-            "wind": {
-                "speed": 5.82,
-                "deg": 130
-            },
-            "sys": {
-                "country": ""
-            },
-            "rain": null,
-            "snow": null,
-            "clouds": {
-                "all": 90
-            },
-            "weather": [{
-                "id": 701,
-                "main": "Mist",
-                "description": "mist",
-                "icon": "50d"
-            }]
-        },
-        {
-            "id": 5354552,
-            "name": "Grover Beach",
-            "coord": {
-                "lat": 35.1216,
-                "lon": -120.6213
-            },
-            "main": {
-                "temp": 58.62,
-                "pressure": 1014,
-                "humidity": 87,
-                "temp_min": 57.2,
-                "temp_max": 60.8
-            },
-            "dt": 1534258560,
-            "wind": {
-                "speed": 5.82,
-                "deg": 130
-            },
-            "sys": {
-                "country": ""
-            },
-            "rain": null,
-            "snow": null,
-            "clouds": {
-                "all": 90
-            },
-            "weather": [{
-                "id": 701,
-                "main": "Mist",
-                "description": "mist",
-                "icon": "50d"
-            }]
-        },
-        {
-            "id": 5378763,
-            "name": "Oceano",
-            "coord": {
-                "lat": 35.0989,
-                "lon": -120.6124
-            },
-            "main": {
-                "temp": 58.62,
-                "pressure": 1014,
-                "humidity": 87,
-                "temp_min": 57.2,
-                "temp_max": 60.8
-            },
-            "dt": 1534258560,
-            "wind": {
-                "speed": 5.82,
-                "deg": 130
-            },
-            "sys": {
-                "country": ""
-            },
-            "rain": null,
-            "snow": null,
-            "clouds": {
-                "all": 90
-            },
-            "weather": [{
-                "id": 701,
-                "main": "Mist",
-                "description": "mist",
-                "icon": "50d"
-            }]
-        },
-        {
-            "id": 5383431,
-            "name": "Pismo Beach",
-            "coord": {
-                "lat": 35.1428,
-                "lon": -120.6413
-            },
-            "main": {
-                "temp": 58.62,
-                "pressure": 1014,
-                "humidity": 87,
-                "temp_min": 57.2,
-                "temp_max": 60.8
-            },
-            "dt": 1534258560,
-            "wind": {
-                "speed": 5.82,
-                "deg": 130
-            },
-            "sys": {
-                "country": ""
-            },
-            "rain": null,
-            "snow": null,
-            "clouds": {
-                "all": 90
-            },
-            "weather": [{
-                "id": 701,
-                "main": "Mist",
-                "description": "mist",
-                "icon": "50d"
-            }]
-        },
-        {
-            "id": 5332963,
-            "name": "Avila Beach",
-            "coord": {
-                "lat": 35.053,
-                "lon": -120.5963
-            },
-            "main": {
-                "temp": 58.06,
-                "pressure": 1014,
-                "humidity": 87,
-                "temp_min": 55.4,
-                "temp_max": 60.8
-            },
-            "dt": 1534258560,
-            "wind": {
-                "speed": 5.82,
-                "deg": 130
-            },
-            "sys": {
-                "country": ""
-            },
-            "rain": null,
-            "snow": null,
-            "clouds": {
-                "all": 90
-            },
-            "weather": [{
-                "id": 701,
-                "main": "Mist",
-                "description": "mist",
-                "icon": "50d"
-            }]
-        },
-        {
-            "id": 5392329,
-            "name": "Paso Robles",
-            "coord": {
-                "lat": 35.3666,
-                "lon": -120.5344
-            },
-            "main": {
-                "temp": 98.84,
-                "pressure": 1014,
-                "humidity": 88,
-                "temp_min": 78.2,
-                "temp_max": 99.8
-            },
-            "dt": 1534258560,
-            "wind": {
-                "speed": 5.82,
-                "deg": 130
-            },
-            "sys": {
-                "country": ""
-            },
-            "rain": null,
-            "snow": null,
-            "clouds": {
-                "all": 90
-            },
-            "weather": [{
-                "id": 800,
-                "main": "Clear",
-                "description": "sky is clear",
-                "icon": "01d"
-            }]
-        },
-        {
-            "id": 5392323,
-            "name": "San Luis Obispo",
-            "coord": {
-                "lat": 35.2827,
-                "lon": -120.6597
-            },
-            "main": {
-                "temp": 58.53,
-                "pressure": 1014,
-                "humidity": 87,
-                "temp_min": 57.2,
-                "temp_max": 60.8
-            },
-            "dt": 1534258560,
-            "wind": {
-                "speed": 5.82,
-                "deg": 130
-            },
-            "sys": {
-                "country": ""
-            },
-            "rain": null,
-            "snow": null,
-            "clouds": {
-                "all": 90
-            },
-            "weather": [{
-                "id": 701,
-                "main": "Mist",
-                "description": "mist",
-                "icon": "50d"
-            }]
-        },
-        {
-            "id": 5372954,
-            "name": "Morro Bay",
-            "coord": {
-                "lat": 35.1855,
-                "lon": -120.7033
-            },
-            "main": {
-                "temp": 58.62,
-                "pressure": 1014,
-                "humidity": 87,
-                "temp_min": 57.2,
-                "temp_max": 60.8
-            },
-            "dt": 1534258560,
-            "wind": {
-                "speed": 5.82,
-                "deg": 130
-            },
-            "sys": {
-                "country": ""
-            },
-            "rain": null,
-            "snow": null,
-            "clouds": {
-                "all": 90
-            },
-            "weather": [{
-                "id": 701,
-                "main": "Mist",
-                "description": "mist",
-                "icon": "50d"
-            }]
-        },
-        {
-            "id": 5393180,
-            "name": "Santa Maria",
-            "coord": {
-                "lat": 34.953,
-                "lon": -120.4358
-            },
-            "main": {
-                "temp": 58.24,
-                "pressure": 1014,
-                "humidity": 87,
-                "temp_min": 55.4,
-                "temp_max": 60.8
-            },
-            "dt": 1534258560,
-            "wind": {
-                "speed": 3.49,
-                "deg": 338.504
-            },
-            "sys": {
-                "country": ""
-            },
-            "rain": null,
-            "snow": null,
-            "clouds": {
-                "all": 90
-            },
-            "weather": [{
-                "id": 701,
-                "main": "Mist",
-                "description": "mist",
-                "icon": "50d"
-            }]
-        }
-    ]
-};
+let dataJSON = '{"message":"accurate","cod":"200","count":30,"list":[{"id":5392323,"name":"San Luis Obispo","coord":{"lat":35.2827,"lon":-120.6597},"main":{"temp":59.59,"pressure":1017,"humidity":83,"temp_min":58.46,"temp_max":60.98},"dt":1535698680,"wind":{"speed":11.41,"deg":320},"sys":{"country":""},"rain":null,"snow":null,"clouds":{"all":90},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04n"}]},{"id":5372954,"name":"Miles","coord":{"lat":35.1855,"lon":-120.7033},"main":{"temp":59.7,"pressure":1017,"humidity":83,"temp_min":58.46,"temp_max":60.98},"dt":1535698680,"wind":{"speed":11.41,"deg":320},"sys":{"country":""},"rain":null,"snow":null,"clouds":{"all":90},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04n"}]},{"id":5325371,"name":"Avila Beach","coord":{"lat":35.18,"lon":-120.7319},"main":{"temp":59.7,"pressure":1017,"humidity":83,"temp_min":58.46,"temp_max":60.98},"dt":1535698680,"wind":{"speed":11.41,"deg":320},"sys":{"country":""},"rain":null,"snow":null,"clouds":{"all":90},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04n"}]},{"id":5393154,"name":"Santa Margarita","coord":{"lat":35.39,"lon":-120.6091},"main":{"temp":59.99,"pressure":1017,"humidity":83,"temp_min":59,"temp_max":60.98},"dt":1535698560,"wind":{"speed":11.41,"deg":320},"sys":{"country":""},"rain":null,"snow":null,"clouds":{"all":90},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04n"}]},{"id":5392329,"name":"San Luis Obispo County","coord":{"lat":35.3666,"lon":-120.5344},"main":{"temp":59.99,"pressure":1017,"humidity":83,"temp_min":59,"temp_max":60.98},"dt":1535698560,"wind":{"speed":11.41,"deg":320},"sys":{"country":""},"rain":null,"snow":null,"clouds":{"all":90},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04n"}]},{"id":5383431,"name":"Pismo Beach","coord":{"lat":35.1428,"lon":-120.6413},"main":{"temp":59.72,"pressure":1017,"humidity":83,"temp_min":58.46,"temp_max":60.98},"dt":1535698680,"wind":{"speed":11.41,"deg":320},"sys":{"country":""},"rain":null,"snow":null,"clouds":{"all":90},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04n"}]},{"id":5368565,"name":"Los Osos","coord":{"lat":35.3111,"lon":-120.8324},"main":{"temp":59.59,"pressure":1017,"humidity":83,"temp_min":58.46,"temp_max":60.98},"dt":1535698680,"wind":{"speed":11.41,"deg":320},"sys":{"country":""},"rain":null,"snow":null,"clouds":{"all":90},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04n"}]},{"id":5354552,"name":"Grover Beach","coord":{"lat":35.1216,"lon":-120.6213},"main":{"temp":59.72,"pressure":1017,"humidity":83,"temp_min":58.46,"temp_max":60.98},"dt":1535698680,"wind":{"speed":11.41,"deg":320},"sys":{"country":""},"rain":null,"snow":null,"clouds":{"all":90},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04n"}]},{"id":5324802,"name":"Arroyo Grande","coord":{"lat":35.1186,"lon":-120.5908},"main":{"temp":59.72,"pressure":1017,"humidity":83,"temp_min":58.46,"temp_max":60.98},"dt":1535698680,"wind":{"speed":11.41,"deg":320},"sys":{"country":""},"rain":null,"snow":null,"clouds":{"all":90},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04n"}]},{"id":5374920,"name":"Morro Bay","coord":{"lat":35.3658,"lon":-120.8499},"main":{"temp":59.99,"pressure":1017,"humidity":83,"temp_min":59,"temp_max":60.98},"dt":1535698560,"wind":{"speed":11.41,"deg":320},"sys":{"country":""},"rain":null,"snow":null,"clouds":{"all":90},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04n"}]},{"id":5378763,"name":"Oceano","coord":{"lat":35.0989,"lon":-120.6124},"main":{"temp":59.72,"pressure":1017,"humidity":83,"temp_min":58.46,"temp_max":60.98},"dt":1535698680,"wind":{"speed":11.41,"deg":320},"sys":{"country":""},"rain":null,"snow":null,"clouds":{"all":90},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04n"}]},{"id":5325111,"name":"Atascadero","coord":{"lat":35.4894,"lon":-120.6708},"main":{"temp":59.97,"pressure":1017,"humidity":72,"temp_min":59,"temp_max":60.98},"dt":1535698560,"wind":{"speed":12.75,"deg":310},"sys":{"country":""},"rain":null,"snow":null,"clouds":{"all":1},"weather":[{"id":800,"main":"Clear","description":"sky is clear","icon":"01n"}]},{"id":5332963,"name":"Callender","coord":{"lat":35.053,"lon":-120.5963},"main":{"temp":59.29,"pressure":1017,"humidity":83,"temp_min":57.2,"temp_max":60.98},"dt":1535698680,"wind":{"speed":11.41,"deg":320},"sys":{"country":""},"rain":null,"snow":null,"clouds":{"all":90},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04n"}]},{"id":5335131,"name":"Cayucos","coord":{"lat":35.4427,"lon":-120.8922},"main":{"temp":60.53,"pressure":1017,"humidity":83,"temp_min":60.08,"temp_max":60.98},"dt":1535698560,"wind":{"speed":11.41,"deg":320},"sys":{"country":""},"rain":null,"snow":null,"clouds":{"all":90},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04n"}]},{"id":5340687,"name":"Creston","coord":{"lat":35.5189,"lon":-120.5238},"main":{"temp":59.99,"pressure":1017,"humidity":72,"temp_min":59,"temp_max":60.98},"dt":1535698560,"wind":{"speed":12.75,"deg":310},"sys":{"country":""},"rain":null,"snow":null,"clouds":{"all":1},"weather":[{"id":800,"main":"Clear","description":"sky is clear","icon":"01n"}]},{"id":5401516,"name":"Templeton","coord":{"lat":35.5497,"lon":-120.7061},"main":{"temp":60.55,"pressure":1017,"humidity":72,"temp_min":60.08,"temp_max":60.98},"dt":1535698560,"wind":{"speed":12.75,"deg":310},"sys":{"country":""},"rain":null,"snow":null,"clouds":{"all":1},"weather":[{"id":800,"main":"Clear","description":"sky is clear","icon":"01n"}]},{"id":5377100,"name":"Nipomo","coord":{"lat":35.0428,"lon":-120.476},"main":{"temp":59.13,"pressure":1017,"humidity":89,"temp_min":57.2,"temp_max":60.98},"dt":1535698680,"wind":{"speed":6.93,"deg":300},"sys":{"country":""},"rain":null,"snow":null,"clouds":{"all":1},"weather":[{"id":800,"main":"Clear","description":"sky is clear","icon":"01n"}]},{"id":5354591,"name":"Guadalupe","coord":{"lat":34.9716,"lon":-120.5719},"main":{"temp":59.13,"pressure":1017,"humidity":89,"temp_min":57.2,"temp_max":60.98},"dt":1535698680,"wind":{"speed":6.93,"deg":300},"sys":{"country":""},"rain":null,"snow":null,"clouds":{"all":1},"weather":[{"id":800,"main":"Clear","description":"sky is clear","icon":"01n"}]},{"id":5381438,"name":"Paso Robles","coord":{"lat":35.6266,"lon":-120.6911},"main":{"temp":60.57,"pressure":1017,"humidity":72,"temp_min":60.08,"temp_max":60.98},"dt":1535698560,"wind":{"speed":12.75,"deg":310},"sys":{"country":""},"rain":null,"snow":null,"clouds":{"all":1},"weather":[{"id":800,"main":"Clear","description":"sky is clear","icon":"01n"}]},{"id":5393180,"name":"Santa Maria","coord":{"lat":34.953,"lon":-120.4358},"main":{"temp":59.14,"pressure":1017,"humidity":89,"temp_min":57.2,"temp_max":60.98},"dt":1535698680,"wind":{"speed":6.93,"deg":300},"sys":{"country":""},"rain":null,"snow":null,"clouds":{"all":1},"weather":[{"id":800,"main":"Clear","description":"sky is clear","icon":"01n"}]},{"id":5406376,"name":"Village Mobile Home Park","coord":{"lat":34.8883,"lon":-120.4533},"main":{"temp":59.14,"pressure":1017,"humidity":89,"temp_min":57.2,"temp_max":60.98},"dt":1535698680,"wind":{"speed":6.93,"deg":300},"sys":{"country":""},"rain":null,"snow":null,"clouds":{"all":1},"weather":[{"id":800,"main":"Clear","description":"sky is clear","icon":"01n"}]},{"id":5346935,"name":"Estrella","coord":{"lat":35.7055,"lon":-120.6102},"main":{"temp":60.57,"pressure":1017,"humidity":72,"temp_min":60.08,"temp_max":60.98},"dt":1535698560,"wind":{"speed":12.75,"deg":310},"sys":{"country":""},"rain":null,"snow":null,"clouds":{"all":1},"weather":[{"id":800,"main":"Clear","description":"sky is clear","icon":"01n"}]},{"id":5394892,"name":"Shandon","coord":{"lat":35.6553,"lon":-120.3755},"main":{"temp":60.55,"pressure":1017,"humidity":72,"temp_min":60.08,"temp_max":60.98},"dt":1535698560,"wind":{"speed":12.75,"deg":310},"sys":{"country":""},"rain":null,"snow":null,"clouds":{"all":1},"weather":[{"id":800,"main":"Clear","description":"sky is clear","icon":"01n"}]},{"id":5333207,"name":"Cambria","coord":{"lat":35.5641,"lon":-121.0808},"main":{"temp":60.53,"pressure":1017,"humidity":72,"temp_min":60.08,"temp_max":60.98},"dt":1535698560,"wind":{"speed":12.75,"deg":310},"sys":{"country":""},"rain":null,"snow":null,"clouds":{"all":1},"weather":[{"id":800,"main":"Clear","description":"sky is clear","icon":"01n"}]},{"id":5379609,"name":"Orcutt","coord":{"lat":34.8653,"lon":-120.436},"main":{"temp":59.14,"pressure":1017,"humidity":89,"temp_min":57.2,"temp_max":60.98},"dt":1535698680,"wind":{"speed":6.93,"deg":300},"sys":{"country":""},"rain":null,"snow":null,"clouds":{"all":1},"weather":[{"id":800,"main":"Clear","description":"sky is clear","icon":"01n"}]},{"id":5392448,"name":"San Miguel","coord":{"lat":35.7525,"lon":-120.6963},"main":{"temp":60.57,"pressure":1017,"humidity":72,"temp_min":60.08,"temp_max":60.98},"dt":1535698560,"wind":{"speed":12.75,"deg":310},"sys":{"country":""},"rain":null,"snow":null,"clouds":{"all":1},"weather":[{"id":800,"main":"Clear","description":"sky is clear","icon":"01n"}]},{"id":5364615,"name":"Lake Nacimiento","coord":{"lat":35.7283,"lon":-120.8797},"main":{"temp":60.57,"pressure":1017,"humidity":72,"temp_min":60.08,"temp_max":60.98},"dt":1535698560,"wind":{"speed":12.75,"deg":310},"sys":{"country":""},"rain":null,"snow":null,"clouds":{"all":1},"weather":[{"id":800,"main":"Clear","description":"sky is clear","icon":"01n"}]},{"id":7262449,"name":"Vandenberg Air Force Base","coord":{"lat":34.7483,"lon":-120.5182},"main":{"temp":59.14,"pressure":1017,"humidity":93,"temp_min":57.2,"temp_max":60.98},"dt":1535698680,"wind":{"speed":13.87,"deg":350},"sys":{"country":""},"rain":null,"snow":null,"clouds":{"all":1},"weather":[{"id":800,"main":"Clear","description":"sky is clear","icon":"01n"}]},{"id":5405737,"name":"Vandenberg Village","coord":{"lat":34.7083,"lon":-120.4677},"main":{"temp":59.14,"pressure":1017,"humidity":86,"temp_min":57.2,"temp_max":60.98},"dt":1535698680,"wind":{"speed":5.82},"sys":{"country":""},"rain":null,"snow":null,"clouds":{"all":90},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04n"}]},{"id":5368321,"name":"Los Alamos","coord":{"lat":34.7444,"lon":-120.2783},"main":{"temp":59.16,"pressure":1017,"humidity":86,"temp_min":57.2,"temp_max":60.98},"dt":1535698680,"wind":{"speed":5.82},"sys":{"country":""},"rain":null,"snow":null,"clouds":{"all":90},"weather":[{"id":804,"main":"Clouds","description":"overcast clouds","icon":"04n"}]}]}';
 
+let data = JSON.parse(dataJSON);
+
+let sector = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW', 'WSW', 'W', 'WNW', 'NW', 'NNW', 'N'];
+
+let cityWeatherData;
 let showMetric = false;
 
-function getCityData(city) {
+function getBackGroundClass(cityName) {
+    return cityName.replace(/(?:^\w|[A-Z]|\b\w)/g, function (letter, index) {
+        return index == 0 ? letter.toLowerCase() : letter.toUpperCase();
+    }).replace(/\s+/g, '');
+}
+
+function convert2DateString(timeStamp) {
+  let date = new Date(timeStamp*1000);
+  let options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric'};
+  return date.toLocaleString("en-US");
+}
+
+function convert2SI(conversion, value) {
+  switch (conversion) {
+    case "f2C": return Math.round(((value-32)*5/9)*100)/100;
+    case "mPH2MPS" : return Math.round((value*0.44704)*100)/100;
+    case "inches2MM" : return Math.round((value*25.4)*100)/100;
+    default: return value;
+  }
+}
+
+function convertDegs2WD(degs) {
+  return sector[Math.round((degs%360)/22.5)+1];
+}
+
+function parseData4City(cityName, data) {
+    for (cityReadings of data.list) {
+        if (cityReadings.name === cityName) {
+            return cityReadings;
+        }
+    }
+    return null;
+}
+
+function parseDataAllCities(data) {
+    for (cityReadings of data.list) {
+        displayCityData(cityReadings);
+    }
+}
+
+function updateBackgroundClassName(cityName) {
+    let className;
+    let classNameDiv;
+
+    className = getBackGroundClass(cityName);
+    classNameDiv = document.getElementById("backgroundId");
+    classNameDiv.className = className;
+    //console.log(className);
+
+}
+
+function updateCityDiv(cityName) {
     let cityIdName;
     let cityDiv;
-    let cityTemperature;
-    let cityTemp;
-    let humidity;
-    let cityHumidity;
-    let pressure;
-    let cityPressure;
-    let tempMin;
-    let cityTempMin;
-    let tempMax;
-    let cityTempMax;
-    let windSpeed;
-    let cityWindSpeed;
-    let windDirection;
-    let cityWindDirection;
-    let rainLevel;
-    let cityRainLevel;
-    let snowLevel;
-    let citySnowLevel;
-    let iconDirection;
-    let cityIconWind;
+
+    //ADD CITY NAME
+    cityIdName = "cityName";
+    cityDiv = document.getElementById(cityIdName);
+    cityDiv.innerHTML = cityName;
+    //console.log(cityName);    
+
+}
+
+function constructWeatherIcon(weatherInfoArr) {
     let iconId;
     let cityIcon;
-    let dayNightIcon;
-    let dayNight;
-    let cityTime;
-    let cityTimeId;
-    let cityTimeStamp;
+    let daynight;
 
-    for (let key in weatherData) {
-        //access the keys
-        for (let i = 0; i < weatherData.list.length; i++) {
-            //accessing List Array, list of objects
-            let listData = weatherData.list[i];
-            //access individual City data
-            // if (listData.name === city) {
-            //     return (listData);
-            // }
+    //CONSTRUCT WEATHER ICON
+    iconId = "cityIconTemperature";
+    cityIcon = document.getElementById(iconId);
+    if (weatherInfoArr.icon.slice(-1) === 'd') {
+        daynight = 'day';
+    } else {
+        daynight = 'night';
+    }
+    cityIcon.className = "wi wi-owm-" + daynight + "-" + weatherInfoArr.id;
+    //console.log("wi wi-owm-" + daynight + "-" + weatherInfoArr.id);
+    //console.log(weatherInfoArr.main);
+    cityIcon.innerHTML=weatherInfoArr.main;
+}
 
-            //ADD CITY NAME
-            cityIdName = "cityName" + i;
-            cityDiv = document.getElementById(cityIdName);
-            cityDiv.innerHTML = listData.name;
+function updateTemperatureDiv(temp) {
+    let cityTemperature;
+    let cityTemp;
 
-            //ADD TEMPERATURE TO CITY TABLE
-            iconId = "cityIconTemperature" + i;
-            cityIcon = document.getElementById(iconId);
-            dayNightIcon = listData.weather[0].icon.slice(-1);
-            if (dayNightIcon === 'd') {
-                dayNight = 'day';
-            } else {
-                dayNight = 'night';
-            }
-            cityIcon.className = "wi wi-owm-" + dayNight + "-" + listData.weather[0].id;
-            cityIcon.innerHTML=listData.weather[0].main;
-            cityTemperature = "cityTemperature" + i;
-            cityTemp = document.getElementById(cityTemperature);
-            if (!showMetric) {
-                cityTemp.innerHTML = listData.main.temp + " ℉";
-            } else {
-                cityTemp.innerHTML = Math.round(((listData.main.temp - 32)* 5/9) *100) / 100 + " °C";
-            }
+    //ADD TEMPERATURE TO CITY TABLE
+    cityTemperature = "cityTemperature"
+    cityTemp = document.getElementById(cityTemperature);
+    if (!showMetric) {
+        cityTemp.innerHTML = temp + " ℉";
+        //console.log(temp + " ℉");
+    } else {
+        cityTemp.innerHTML = convert2SI("f2C", temp) + " °C";
+        //console.log(convert2SI("f2C", temp) + " °C");
+    }
+}
 
-            //ADD HUMIDITY TO CITY TABLE
-            humidity = "cityHumidity" + i;
-            cityHumidity = document.getElementById(humidity);
-            cityHumidity.innerHTML = "Humidity: " + listData.main.humidity + "%";
+function updateHumidityDiv(hum) {
+    let humidity;
+    let cityHumidity;
 
-            //ADD PRESSURE TO CITY TABLE
-            pressure = "cityPressure" + i;
-            cityPressure = document.getElementById(pressure);
-            if (!showMetric) {
-                cityPressure.innerHTML = "Pressure: " + listData.main.pressure + " mbar";
-            } else {
-                cityPressure.innerHTML = "Pressure: " + listData.main.pressure + " hPa";
-            }
+    //ADD HUMIDITY TO CITY TABLE
+    humidity = "cityHumidity";
+    cityHumidity = document.getElementById(humidity);
+    cityHumidity.innerHTML = "Humidity: " + hum + "%";
+    //console.log("Humidity: " + hum + "%");
+}
 
-            cityTime = new Date(listData.dt * 1000);
-            cityTimeId = "timeStamp" + i;
-            cityTimeStamp = document.getElementById(cityTimeId);
-            cityTimeStamp.innerHTML = cityTime.toDateString().substr(4) + " " + cityTime.toTimeString().slice(0,8);
+function updatePressureDiv(airPres) {
+    let pressure;
+    let cityPressure;
 
-            //ADD TEMP MIN TO CITY TABLE
-            tempMin = "cityTempMin" + i;
-            cityTempMin = document.getElementById(tempMin);
-            if (!showMetric) {
-                cityTempMin.innerHTML = "Min: " + listData.main.temp_min + " ℉";
-            } else {
-                cityTempMin.innerHTML = "Min: " + Math.round(((listData.main.temp_min - 32)* 5/9) *100) / 100 + " °C";
-            }
+    //ADD PRESSURE TO CITY TABLE
+    pressure = "cityPressure";
+    cityPressure = document.getElementById(pressure);
+    if (!showMetric) {
+        cityPressure.innerHTML = "Pressure: " + airPres + " mbar";
+        //console.log("Pressure: " + airPres + " mbar");
+    } else {
+        cityPressure.innerHTML = "Pressure: " + airPres + " hPa";
+        //console.log("Pressure: " + airPres + " hPa");
+    }
+}
 
-            //ADD TEMP MAX TO CITY TABLE
-            tempMax = "cityTempMax" + i;
-            cityTempMax = document.getElementById(tempMax);
-            if (!showMetric) {
-                cityTempMax.innerHTML = "Max: " + listData.main.temp_max + " ℉";
-            } else {
-                cityTempMax.innerHTML = "Max: " + Math.round(((listData.main.temp_max - 32)* 5/9) *100) / 100 + " °C";
-            }
+function updateMinMaxTempDiv(temp, type) {
+    let minMaxtemp;
+    let cityMinMaxTemp;
 
-            //ADD WIND SPEED TO CITY TABLE
-            windSpeed = "cityWindSpeed" + i;
-            cityWindSpeed = document.getElementById(windSpeed);
-            if (!showMetric) {
-                cityWindSpeed.innerHTML = "Wind Speed: " + listData.wind.speed + "mph";
-            } else {
-                cityWindSpeed.innerHTML = "Wind Speed: " + Math.round((listData.wind.speed * 0.44704)*100) / 100 + " m/s";
-            }
+    //ADD TEMP MIN OR MAX TO CITY TABLE
+    if (type === "Min") {
+        minMaxTemp = "cityTempMin";
+    } else {
+        minMaxTemp = "cityTempMax"
+    }
+    cityMinMaxTemp = document.getElementById(minMaxTemp);
+    if (!showMetric) {
+        cityMinMaxTemp.innerHTML = type + ": " + temp + " ℉";
+        //console.log(type + ": " + temp + " ℉");
+    } else {
+        cityMinMaxTemp.innerHTML = type + ": " + convert2SI("f2C", temp) + " °C";
+        //console.log(type + ": " + convert2SI("f2C", temp) + " °C");
+    }
+}
 
-            //ADD WIND DIRECTION TO CITY TABLE
-            windDirection = "cityWindDirection" + i;
-            cityWindDirection = document.getElementById(windDirection);
-            iconDirection = "cityIconSpeed" + i;
-            cityIconWind = document.getElementById(iconDirection);
-            //round to nearest integer
-            roundedWindDirection = Math.round(listData.wind.deg);
-            cityIconWind.className = "wi wi-wind towards-" + roundedWindDirection + "-deg";
-            //determine wind direction
-            if (roundedWindDirection <= 22) {
-                cityWindDirection.innerHTML = "Wind Direction: N";
-            } else if (roundedWindDirection <= 67) {
-                cityWindDirection.innerHTML = "Wind Direction: NE";
-            } else if (roundedWindDirection <= 112) {
-                cityWindDirection.innerHTML = "Wind Direction: E";
-            } else if (roundedWindDirection <= 157) {
-                cityWindDirection.innerHTML = "Wind Direction: SE";
-            } else if (roundedWindDirection <= 202) {
-                cityWindDirection.innerHTML = "Wind Direction: S";
-            } else if (roundedWindDirection <= 247) {
-                cityWindDirection.innerHTML = "Wind Direction: SW";
-            } else if (roundedWindDirection <= 292) {
-                cityWindDirection.innerHTML = "Wind Direction: W";
-            } else if (roundedWindDirection <= 337) {
-                cityWindDirection.innerHTML = "Wind Direction: NW";
-            } else if (roundedWindDirection <= 360) {
-                cityWindDirection.innerHTML = "Wind Direction: N";
-            }
+function updateWindDiv(ws) {
+    let windSpeed;
+    let cityWindSpeed;
 
-            //ADD RAIN TO CITY TABLE
-            rainLevel = "cityRain" + i;
-            cityRainLevel = document.getElementById(rainLevel);
-            if (listData.rain === null) {
-                cityRainLevel.innerHTML = "Rain: " + "0.0" + " inches";
-            } else {
-                cityRainLevel.innerHTML = "Rain: " + listData.rain + " inches";
-            }
+    //ADD WIND SPEED TO CITY TABLE
+    windSpeed = "cityWindSpeed";
+    cityWindSpeed = document.getElementById(windSpeed);
+    if (!showMetric) {
+        cityWindSpeed.innerHTML = "Wind Speed: " + ws + " mph";
+        //console.log("Wind Speed: " + ws + " mph")
+    } else {
+        cityWindSpeed.innerHTML = "Wind Speed: " + convert2SI("mPH2MPS", ws) + " m/s";
+        //console.log("Wind Speed: " + convert2SI("mPH2MPS", ws) + " m/s");
+    }
+}
 
-            //ADD SNOW TO CITY TABLE
-            snowLevel = "citySnow" + i;
-            citySnowLevel = document.getElementById(snowLevel);
-            if (listData.snow === null) {
-                citySnowLevel.innerHTML = "Snow: " + "0.0" + " inches";
-            } else {
-                citySnowLevel.innerHTML = "Snow: " + listData.snow + " inches";
-            }
+function updateWindDirDiv(deg) {
+    let windDirection;
+    let cityWindDirection;
+    let iconDirection;
+    let cityIconWind;
+    
+    //ADD WIND DIRECTION TO CITY TABLE
+    windDirection = "cityWindDirection";
+    cityWindDirection = document.getElementById(windDirection);
+    iconDirection = "cityIconSpeed";
+    cityIconWind = document.getElementById(iconDirection);
+    //round to nearest integer
+    cityIconWind.className = "wi wi-wind towards-" + Math.round(deg) + "-deg";
+    //console.log("wi wi-wind towards-" + Math.round(deg) + "-deg");
+    cityWindDirection.innerHTML = "Wind Direction: " + convertDegs2WD(deg);
+    //console.log("Wind Direction: " + convertDegs2WD(deg));
+}
 
-            //UPDATE FOOTER
-            lastUpdated = document.getElementById("LastUpdated");
-            let d = new Date();
+function updateRainSnowDiv(amt, type) {
+    let level;
+    let cityLevel;
 
-            lastUpdated.innerHTML = "Last updated on " + (d.getMonth() + 1) + "/" + d.getDate() + "/" + d.getFullYear() + " at " + d.getHours() + ":" + d.getMinutes();
+    //ADD RAIN OR SNOW TO CITY TABLE
+    if (type === 'Rain') {
+        level = "cityRain";
+    } else {
+        level = "citySnow";
+    }
+    cityLevel = document.getElementById(level);
+    if (amt === null) {
+        if (!showMetric) {
+            cityLevel.innerHTML = type + ": " + "0.0" + " inches";
+            //console.log(type + ": " + "0.0" + " inches");
+        } else {
+            cityLevel.innerHTML = type + ": " + "0.0" + " mm";
+            //console.log(type + ": " + "0.0" + " mm")
+        }
+    } else {
+        if (!showMetric) {
+            cityRainLevel.innerHTML = type + ": " + amt + " inches";
+            //console.log(type + ": " + amt + " inches");
+        } else {
+            cityRainLevel.innerHTML = type + ": " + convert2SI("inches2MM", amt) + " mm";
+            //console.log(type + ": " + convert2SI("inches2MM", amt) + " mm");
         }
     }
 }
 
-let cityData = getCityData("San Luis Obispo");
+function updateDateDiv(dt) {
+    let timeStamp;
+    let cityTimeStamp;
+
+    timeStamp = "timeStamp";
+    cityTimeStamp = document.getElementById(timeStamp);
+    cityTimeStamp.innerHTML = convert2DateString(dt);
+    //console.log(convert2DateString(dt));
+}
+
+function displayCityData(cityData) {
+    //GET BACKGROUND CLASS NAME
+    updateBackgroundClassName(cityData.name);
+
+    //ADD CITY NAME
+    updateCityDiv(cityData.name);
+
+    //CONSTRUCT WEATHER ICON
+    constructWeatherIcon(cityData.weather[0]);
+
+    //ADD TEMPERATURE TO CITY TABLE
+    updateTemperatureDiv(cityData.main.temp);
+
+    //ADD HUMIDITY TO CITY TABLE
+    updateHumidityDiv(cityData.main.humidity);
+
+    //ADD PRESSURE TO CITY TABLE
+    updatePressureDiv(cityData.main.pressure);
+
+    //ADD MIN TEMPERATURE TO CITY TABLE
+    updateMinMaxTempDiv(cityData.main.temp_min, "Min");
+
+    //ADD MAX TEMPERATURE TO CITY TABLE
+    updateMinMaxTempDiv(cityData.main.temp_max, "Max");
+
+    //ADD WIND SPEED TO CITY TABLE
+    updateWindDiv(cityData.wind.speed);
+
+    //ADD WIND DIRECTION TO CITY TABLE
+    updateWindDirDiv(cityData.wind.deg);
+
+    //ADD RAIN TO CITY TABLE
+    updateRainSnowDiv(cityData.rain, "Rain");
+
+    //ADD SNOW TO CITY TABLE
+    updateRainSnowDiv(cityData.snow, "Snow");
+
+    //ADD DATE TO CITY TABLE
+    updateDateDiv(cityData.dt);
+
+    //UPDATE FOOTER
+    lastUpdated = document.getElementById("LastUpdated");
+    let d = new Date();
+    let options = { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric'};
+    lastUpdated.innerHTML = "Last updated on: " + d.toLocaleString("en-US");
+}
+
+/*cityWeatherData=parseData4City("Morro Bay", data);
+displayCityData(cityWeatherData);*/
 
 let myBtn = document.getElementById("fToCButton");
 myBtn.addEventListener("click", function() {
     let letter = myBtn.innerHTML;
+    let cityNameId = document.getElementById("cityName");
+    let cityName = cityNameId.innerHTML;
     if (letter === "F") {
         myBtn.innerHTML = "C";
         showMetric = true;
-        getCityData();
     } else {
         myBtn.innerHTML = "F";
         showMetric = false;
-        getCityData();
     }
+    if (cityName !== '--') {
+        let cityWeatherData=parseData4City(cityName, data);
+        displayCityData(cityWeatherData);
+    }
+});
+
+let aGBtn = document.getElementById("aGBtn");
+aGBtn.addEventListener("click", function() {
+    let cityName = aGBtn.innerHTML;
+    let cityWeatherData=parseData4City(cityName, data);
+    displayCityData(cityWeatherData);
+});
+
+let gBBtn = document.getElementById("gBBtn");
+gBBtn.addEventListener("click", function() {
+    let cityName = gBBtn.innerHTML;
+    let cityWeatherData=parseData4City(cityName, data);
+    displayCityData(cityWeatherData);
+});
+
+let oBtn = document.getElementById("oBtn");
+oBtn.addEventListener("click", function() {
+    let cityName = oBtn.innerHTML;
+    let cityWeatherData=parseData4City(cityName, data);
+    displayCityData(cityWeatherData);
+});
+
+let pBBtn = document.getElementById("pBBtn");
+pBBtn.addEventListener("click", function() {
+    let cityName = pBBtn.innerHTML;
+    let cityWeatherData=parseData4City(cityName, data);
+    displayCityData(cityWeatherData);
+});
+
+let aBBtn = document.getElementById("aBBtn");
+aBBtn.addEventListener("click", function() {
+    let cityName = aBBtn.innerHTML;
+    let cityWeatherData=parseData4City(cityName, data);
+    displayCityData(cityWeatherData);
+});
+
+let pRBtn = document.getElementById("pRBtn");
+pRBtn.addEventListener("click", function() {
+    let cityName = pRBtn.innerHTML;
+    let cityWeatherData=parseData4City(cityName, data);
+    displayCityData(cityWeatherData);
+});
+
+let nBtn = document.getElementById("nBtn");
+nBtn.addEventListener("click", function() {
+    let cityName = nBtn.innerHTML;
+    let cityWeatherData=parseData4City(cityName, data);
+    displayCityData(cityWeatherData);
+});
+
+let sLOBtn = document.getElementById("sLOBtn");
+sLOBtn.addEventListener("click", function() {
+    let cityName = sLOBtn.innerHTML;
+    let cityWeatherData=parseData4City(cityName, data);
+    displayCityData(cityWeatherData);
+});
+
+let mBBtn = document.getElementById("mBBtn");
+mBBtn.addEventListener("click", function() {
+    let cityName = mBBtn.innerHTML;
+    let cityWeatherData=parseData4City(cityName, data);
+    displayCityData(cityWeatherData);
+})
+
+let sMBtn = document.getElementById("sMBtn");
+sMBtn.addEventListener("click", function() {
+    let cityName = sMBtn.innerHTML;
+    let cityWeatherData=parseData4City(cityName, data);
+    displayCityData(cityWeatherData);
 });
 
 //console.log(cityData);
