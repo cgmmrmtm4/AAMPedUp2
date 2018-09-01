@@ -7,10 +7,26 @@ let sector = ['N', 'NNE', 'NE', 'ENE', 'E', 'ESE', 'SE', 'SSE', 'S', 'SSW', 'SW'
 let cityWeatherData;
 let showMetric = false;
 
-function getBackGroundClass(cityName) {
+function getCamelCaseName(cityName) {
     return cityName.replace(/(?:^\w|[A-Z]|\b\w)/g, function (letter, index) {
         return index == 0 ? letter.toLowerCase() : letter.toUpperCase();
     }).replace(/\s+/g, '');
+}
+
+function buildPullDownMenuAndArm(cityName) {
+    let pullDownMenu = document.getElementById("pullDownMenu");
+    let newButton = document.createElement("button");
+    let idName = getCamelCaseName(cityName) + "Btn";
+    let className = "pickCity";
+    newButton.id=idName;
+    newButton.className=className;
+    newButton.innerHTML=cityName;
+    pullDownMenu.appendChild(newButton);
+    newButton.addEventListener("click", function() {
+        let btnCityName = newButton.innerHTML;
+        let cityWeatherData=parseData4City(btnCityName, data);
+        displayCityData(cityWeatherData);
+    });
 }
 
 function convert2DateString(timeStamp) {
@@ -33,12 +49,7 @@ function convertDegs2WD(degs) {
 }
 
 function parseData4City(cityName, data) {
-    for (cityReadings of data.list) {
-        if (cityReadings.name === cityName) {
-            return cityReadings;
-        }
-    }
-    return null;
+    return data.list.find((e)=>{return e.name === cityName});
 }
 
 function parseDataAllCities(data) {
@@ -51,10 +62,9 @@ function updateBackgroundClassName(cityName) {
     let className;
     let classNameDiv;
 
-    className = getBackGroundClass(cityName);
+    className = getCamelCaseName(cityName);
     classNameDiv = document.getElementById("backgroundId");
     classNameDiv.className = className;
-    //console.log(className);
 
 }
 
@@ -65,8 +75,7 @@ function updateCityDiv(cityName) {
     //ADD CITY NAME
     cityIdName = "cityName";
     cityDiv = document.getElementById(cityIdName);
-    cityDiv.innerHTML = cityName;
-    //console.log(cityName);    
+    cityDiv.innerHTML = cityName;   
 
 }
 
@@ -84,8 +93,6 @@ function constructWeatherIcon(weatherInfoArr) {
         daynight = 'night';
     }
     cityIcon.className = "wi wi-owm-" + daynight + "-" + weatherInfoArr.id;
-    //console.log("wi wi-owm-" + daynight + "-" + weatherInfoArr.id);
-    //console.log(weatherInfoArr.main);
     cityIcon.innerHTML=weatherInfoArr.main;
 }
 
@@ -98,10 +105,8 @@ function updateTemperatureDiv(temp) {
     cityTemp = document.getElementById(cityTemperature);
     if (!showMetric) {
         cityTemp.innerHTML = temp + " ℉";
-        //console.log(temp + " ℉");
     } else {
         cityTemp.innerHTML = convert2SI("f2C", temp) + " °C";
-        //console.log(convert2SI("f2C", temp) + " °C");
     }
 }
 
@@ -113,7 +118,6 @@ function updateHumidityDiv(hum) {
     humidity = "cityHumidity";
     cityHumidity = document.getElementById(humidity);
     cityHumidity.innerHTML = "Humidity: " + hum + "%";
-    //console.log("Humidity: " + hum + "%");
 }
 
 function updatePressureDiv(airPres) {
@@ -125,10 +129,8 @@ function updatePressureDiv(airPres) {
     cityPressure = document.getElementById(pressure);
     if (!showMetric) {
         cityPressure.innerHTML = "Pressure: " + airPres + " mbar";
-        //console.log("Pressure: " + airPres + " mbar");
     } else {
         cityPressure.innerHTML = "Pressure: " + airPres + " hPa";
-        //console.log("Pressure: " + airPres + " hPa");
     }
 }
 
@@ -145,10 +147,8 @@ function updateMinMaxTempDiv(temp, type) {
     cityMinMaxTemp = document.getElementById(minMaxTemp);
     if (!showMetric) {
         cityMinMaxTemp.innerHTML = type + ": " + temp + " ℉";
-        //console.log(type + ": " + temp + " ℉");
     } else {
         cityMinMaxTemp.innerHTML = type + ": " + convert2SI("f2C", temp) + " °C";
-        //console.log(type + ": " + convert2SI("f2C", temp) + " °C");
     }
 }
 
@@ -161,10 +161,8 @@ function updateWindDiv(ws) {
     cityWindSpeed = document.getElementById(windSpeed);
     if (!showMetric) {
         cityWindSpeed.innerHTML = "Wind Speed: " + ws + " mph";
-        //console.log("Wind Speed: " + ws + " mph")
     } else {
         cityWindSpeed.innerHTML = "Wind Speed: " + convert2SI("mPH2MPS", ws) + " m/s";
-        //console.log("Wind Speed: " + convert2SI("mPH2MPS", ws) + " m/s");
     }
 }
 
@@ -181,9 +179,7 @@ function updateWindDirDiv(deg) {
     cityIconWind = document.getElementById(iconDirection);
     //round to nearest integer
     cityIconWind.className = "wi wi-wind towards-" + Math.round(deg) + "-deg";
-    //console.log("wi wi-wind towards-" + Math.round(deg) + "-deg");
     cityWindDirection.innerHTML = "Wind Direction: " + convertDegs2WD(deg);
-    //console.log("Wind Direction: " + convertDegs2WD(deg));
 }
 
 function updateRainSnowDiv(amt, type) {
@@ -200,18 +196,14 @@ function updateRainSnowDiv(amt, type) {
     if (amt === null) {
         if (!showMetric) {
             cityLevel.innerHTML = type + ": " + "0.0" + " inches";
-            //console.log(type + ": " + "0.0" + " inches");
         } else {
             cityLevel.innerHTML = type + ": " + "0.0" + " mm";
-            //console.log(type + ": " + "0.0" + " mm")
         }
     } else {
         if (!showMetric) {
             cityRainLevel.innerHTML = type + ": " + amt + " inches";
-            //console.log(type + ": " + amt + " inches");
         } else {
             cityRainLevel.innerHTML = type + ": " + convert2SI("inches2MM", amt) + " mm";
-            //console.log(type + ": " + convert2SI("inches2MM", amt) + " mm");
         }
     }
 }
@@ -223,7 +215,6 @@ function updateDateDiv(dt) {
     timeStamp = "timeStamp";
     cityTimeStamp = document.getElementById(timeStamp);
     cityTimeStamp.innerHTML = convert2DateString(dt);
-    //console.log(convert2DateString(dt));
 }
 
 function displayCityData(cityData) {
@@ -273,9 +264,19 @@ function displayCityData(cityData) {
     lastUpdated.innerHTML = "Last updated on: " + d.toLocaleString("en-US");
 }
 
-/*cityWeatherData=parseData4City("Morro Bay", data);
-displayCityData(cityWeatherData);*/
+//Sort data by city name
+data.list.sort((a,b)=>{
+    let cityNameA = a.name.toUpperCase();
+    let cityNameB = b.name.toUpperCase();
+    return (cityNameA < cityNameB) ? -1 : (cityNameA > cityNameB) ? 1 : 0;
+});
 
+//Build Menu and Arm buttons
+for (cityWeatherData of data.list) {
+    buildPullDownMenuAndArm(cityWeatherData.name);
+}
+
+//Build and Arm F/C button.
 let myBtn = document.getElementById("fToCButton");
 myBtn.addEventListener("click", function() {
     let letter = myBtn.innerHTML;
@@ -288,80 +289,9 @@ myBtn.addEventListener("click", function() {
         myBtn.innerHTML = "F";
         showMetric = false;
     }
+    //If we haven't selected a city yet. Don't show data.
     if (cityName !== '--') {
         let cityWeatherData=parseData4City(cityName, data);
         displayCityData(cityWeatherData);
     }
 });
-
-let aGBtn = document.getElementById("aGBtn");
-aGBtn.addEventListener("click", function() {
-    let cityName = aGBtn.innerHTML;
-    let cityWeatherData=parseData4City(cityName, data);
-    displayCityData(cityWeatherData);
-});
-
-let gBBtn = document.getElementById("gBBtn");
-gBBtn.addEventListener("click", function() {
-    let cityName = gBBtn.innerHTML;
-    let cityWeatherData=parseData4City(cityName, data);
-    displayCityData(cityWeatherData);
-});
-
-let oBtn = document.getElementById("oBtn");
-oBtn.addEventListener("click", function() {
-    let cityName = oBtn.innerHTML;
-    let cityWeatherData=parseData4City(cityName, data);
-    displayCityData(cityWeatherData);
-});
-
-let pBBtn = document.getElementById("pBBtn");
-pBBtn.addEventListener("click", function() {
-    let cityName = pBBtn.innerHTML;
-    let cityWeatherData=parseData4City(cityName, data);
-    displayCityData(cityWeatherData);
-});
-
-let aBBtn = document.getElementById("aBBtn");
-aBBtn.addEventListener("click", function() {
-    let cityName = aBBtn.innerHTML;
-    let cityWeatherData=parseData4City(cityName, data);
-    displayCityData(cityWeatherData);
-});
-
-let pRBtn = document.getElementById("pRBtn");
-pRBtn.addEventListener("click", function() {
-    let cityName = pRBtn.innerHTML;
-    let cityWeatherData=parseData4City(cityName, data);
-    displayCityData(cityWeatherData);
-});
-
-let nBtn = document.getElementById("nBtn");
-nBtn.addEventListener("click", function() {
-    let cityName = nBtn.innerHTML;
-    let cityWeatherData=parseData4City(cityName, data);
-    displayCityData(cityWeatherData);
-});
-
-let sLOBtn = document.getElementById("sLOBtn");
-sLOBtn.addEventListener("click", function() {
-    let cityName = sLOBtn.innerHTML;
-    let cityWeatherData=parseData4City(cityName, data);
-    displayCityData(cityWeatherData);
-});
-
-let mBBtn = document.getElementById("mBBtn");
-mBBtn.addEventListener("click", function() {
-    let cityName = mBBtn.innerHTML;
-    let cityWeatherData=parseData4City(cityName, data);
-    displayCityData(cityWeatherData);
-})
-
-let sMBtn = document.getElementById("sMBtn");
-sMBtn.addEventListener("click", function() {
-    let cityName = sMBtn.innerHTML;
-    let cityWeatherData=parseData4City(cityName, data);
-    displayCityData(cityWeatherData);
-});
-
-//console.log(cityData);
