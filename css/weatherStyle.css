@@ -58,6 +58,18 @@ body {
     margin: 0px;
 }
 
+.shandon, .atascadero, .callender, .creston, .estrella, .guadalupe, .lakeNacimiento, .losAlamos, .miles, .orcutt, .sanLuisObispoCounty, .sanMiguel, .santaMargarita, .templeton, .vandenbergVillage, .villageMobileHomePark {
+    background-image: url("../img/Central\ Coast\ Inland.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+.cambria, .cayucos, .losOsos, .vandenbergAirForceBase {
+    background-image: url("../img/Central\ Coast\ Shore.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
 .nipomo {
     background-image: url("../img/nipomo.jpg");
     background-repeat: no-repeat;
@@ -323,7 +335,7 @@ footer {
     background-color: rgba(100,128,206,1);
     color: white;
     height: 60px;
-    width: 60px;
+    width: 80px;
 }
 
 .dropdown-content {
