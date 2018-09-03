@@ -142,19 +142,19 @@ footer {
 }
 
 .temperature {
-    font-size: 4vw;
+    font-size: 4vmin;
     text-shadow: 2px 2px 4px #000000;
     margin: 0;
 }
 
 .humidity {
-    font-size: 1.5vw;
+    font-size: 2vmin;
     text-shadow: 2px 2px 4px #000000;
     margin: 0;
 }
 
 .pressure {
-    font-size: 1.5vw;
+    font-size: 2vmin;
     text-shadow: 2px 2px 4px #000000;
     margin: 0;
 }
@@ -167,37 +167,37 @@ footer {
 }
 
 .tempMin {
-    font-size: 1.5vw;
+    font-size: 1.5vmin;
     text-shadow: 2px 2px 4px #000000;
     margin: 0;
 }
 
 .tempMax {
-    font-size: 1.5vw;
+    font-size: 1.5vmin;
     text-shadow: 2px 2px 4px #000000;
     margin: 0;
 }
 
 .windSpeed {
     margin: 0;
-    font-size: 2.0vw;
+    font-size: 2vmin;
     text-shadow: 2px 2px 4px #000000;
 }
 
 .windDirection {
-    font-size: 2.0vw;
+    font-size: 2vmin;
     text-shadow: 2px 2px 4px #000000;
     margin: 0;
 }
 
 .rain {
-    font-size: 1.5vw;
+    font-size: 2vmin;
     text-shadow: 2px 2px 4px #000000;
     margin: 0;
 }
 
 .snow {
-    font-size: 1.5vw;
+    font-size: 2vmin;
     text-shadow: 2px 2px 4px #000000;
     margin: 0;
 }
@@ -214,29 +214,29 @@ footer {
     top: 33vh;
     left: 75vw;
     width: 22vw;
-    height: 28vh;
+    height: 19vh;
     display: block;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.3);
     border-radius: 25%;
 }
 
 #tempDiv i {
-    margin-left: 4vw;
-    font-size: 3vw;
+    margin-left: 4vmin;
+    font-size: 3vmin;
 }
 
 #tempDiv p {
-    margin-left: 4vw;
+    margin-left: 4vmin;
 }
 
 #windDiv {
     position: fixed;
     top: 33vh;
     left: 1vw;
-    width: 26vw;
-    height: 23vh;
+    width: 25vw;
+    height: 19vh;
     display: block;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.3);
     border-radius: 25%;
 }
 
@@ -246,47 +246,47 @@ footer {
     left: 38vw;
     width: 25vw;
     display: block;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.3);
     border-radius: 25%;
 }
 
 #windDiv i {
-    margin-left: 11vw;
-    font-size: 5vw;
+    margin-left: 11vmin;
+    font-size: 5vmin;
 }
 
 #windDiv p {
-    margin-left: 3vw;
+    margin-left: 3vmin;
 }
 
 #humPressureDiv {
     position: fixed;
     top: 52vh;
     left: 30vw;
-    width: 20vw;
-    height: 7.5vh;
+    width: 21vw;
+    height: 7vh;
     display: block;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.3);
     border-radius: 25%;
 }
 
 #humPressureDiv p {
-    margin-left: 2vw;
+    margin-left: 2vmin;
 }
 
 #rainAndSnowDiv {
     position: fixed;
     top: 52vh;
     left: 58vw;
-    width: 15vw;
-    height: 7.5vh;
+    width: 20vw;
+    height: 7vh;
     display: block;
-    background: rgba(0,0,0,0.6);
+    background: rgba(0,0,0,0.3);
     border-radius: 25%;
 }
 
 #rainAndSnowDiv p {
-    margin-left: 2vw;
+    margin-left: 2vmin;
 }
 
 .dropdown {
@@ -355,4 +355,52 @@ footer {
 .fToC:hover {
     background-color: #3e8e41;
     color: white;
+}
+
+@media screen and (max-width: 800px) {
+    #tempDiv {
+        position: fixed;
+        top: 33vh;
+        left: 75vw;
+        width: 22vw;
+        height: 13vh;
+        display: block;
+        background: rgba(0,0,0,0.3);
+        border-radius: 25%;
+    }
+
+    #windDiv {
+        position: fixed;
+        top: 33vh;
+        left: 1vw;
+        width: 25vw;
+        height: 13vh;
+        display: block;
+        background: rgba(0,0,0,0.3);
+        border-radius: 25%;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    #tempDiv {
+        position: fixed;
+        top: 30vh;
+        left: 75vw;
+        width: 22vw;
+        height: 20vh;
+        display: block;
+        background: rgba(0,0,0,0.3);
+        border-radius: 25%;
+    }
+
+    #windDiv {
+        position: fixed;
+        top: 30vh;
+        left: 1vw;
+        width: 25vw;
+        height: 19vh;
+        display: block;
+        background: rgba(0,0,0,0.3);
+        border-radius: 25%;
+    }
 }
