@@ -26,11 +26,9 @@
         </div>
     </header>
     <section id=main>
-    <div class="allTen">
-        <div id="backgroundId" class="defaultOceanCity">
-            <div id="blep"><br></div>
-            <div id="cityName" class= "headerStylez" >Select City</div>
-            <div id="cityTable" class="transbox">
+        <div id="wd">
+            <div id="backgroundId" class="defaultOceanCity">
+                <div id="cityName" class= "headerStylez" >Select City</div>
                 <div id="tempDiv">
                     <i id = "cityIconTemperature" class="wi wi-owm-day-701">Mist</i>
                     <p id = "cityTemperature" class = "temperature" >--</p>
@@ -38,24 +36,25 @@
                     <p id = "cityTempMax" class = "tempMax">--</p>
                 </div>
                 <div id="windDiv">
-                    <p id = "cityWindSpeed" class = "windSpeed">--</p>
-                    <i id = "cityIconSpeed" class="wi wi-wind towards-180-deg"></i>  
+                    <i id = "cityIconSpeed" class="wi wi-wind towards-180-deg"></i>
                     <p id = "cityWindDirection" class = "windDirection">--</p>
-                    <p hidden>a</p>
+                    <p id = "cityWindSpeed" class = "windSpeed">--</p> 
                 </div>
                 <div id="humPressureDiv">
                     <p id = "cityHumidity" class = "humidity">--</p>
                     <p id = "cityPressure" class = "pressure">--</p>
-                    <p id = "timeStamp" class = "timeStamp">--</p>
                 </div>
                 <div id="rainAndSnowDiv">
                     <p id = "cityRain" class = "rain">--</p>
                     <p id = "citySnow" class = "snow">--</p>
                 </div>
+                <div id="dataTime">
+                    <p id = "timeStamp" class = "timeStamp">--</p> 
+                </div>
+            <!--<div id="cityTable" class="transbox"></div>
+            </div>-->
             </div>
-            <div id="blep"><br></div>
         </div>
-    </div>
     </section>
     <footer>
         <p id="LastUpdated"></p>

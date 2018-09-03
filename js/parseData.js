@@ -45,7 +45,7 @@ function convert2SI(conversion, value) {
 }
 
 function convertDegs2WD(degs) {
-  return sector[Math.round((degs%360)/22.5)+1];
+    return sector[Math.round((degs%360)/22.5)];
 }
 
 function parseData4City(cityName, data) {
@@ -178,8 +178,13 @@ function updateWindDirDiv(deg) {
     iconDirection = "cityIconSpeed";
     cityIconWind = document.getElementById(iconDirection);
     //round to nearest integer
-    cityIconWind.className = "wi wi-wind towards-" + Math.round(deg) + "-deg";
-    cityWindDirection.innerHTML = "Wind Direction: " + convertDegs2WD(deg);
+    if (deg !== undefined) {
+        cityIconWind.className = "wi wi-wind towards-" + Math.round(deg) + "-deg";
+        cityWindDirection.innerHTML = "Wind Direction: " + convertDegs2WD(deg);
+    } else {
+        cityIconWind.className = "";
+        cityWindDirection.innerHTML = "No Direction Data";
+    }
 }
 
 function updateRainSnowDiv(amt, type) {

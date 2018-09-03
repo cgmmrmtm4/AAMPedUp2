@@ -2,10 +2,8 @@ body {
     width: 100%;
     height: 100%;
     padding: 0px;
-    /**border: 3px solid green;**/
     margin: auto;
     background-color: rgba(100,128,206,1);
-    min-width: 580px;
 }
 
 #headMenu {
@@ -13,49 +11,39 @@ body {
     background-color: rgba(100,128,206,1);
 }
 .mainHeader {
-    width: 90%;
     margin: 0;
-    font-size: 80px;
+    font-size: 6vw;
     font-family: Arial, Helvetica, sans-serif;
     padding-top: 25px;
     text-align: center;
     color: white;
-    /*background-color: rgb(39, 79, 190);*/
     background-color: rgba(100,128,206,1);
 }
 
 #main {
-    width: 100%;
-    height: 444px;
-    overflow-y: scroll;
+    width: 100vw;
+    height: 60vh;
 }
 
-#main::-webkit-scrollbar {
-    width: 0.2em;
-}
-
-#main::-webkit-scrollbar-track {
-    background-color: rgba(0,0,0,0.3);
-}
-
-#main::-webkit-scrollbar-thumb {
-    background-color: rgba(100,128,206,1);
-    outline: 1px solid rgba(100,128,206,1);
-}
-
-.allTen {
+#backgroundId {
     font-size: 55px;
+    height: 100%;
+    width:100%;
     font-family: Arial, Helvetica, sans-serif;
     padding-bottom: 0px;
     padding-top: 0px;
-    /*text-align: center;*/
     text-shadow: 2px 2px 4px #000000;
     color: gainsboro;
     background-color: rgb(255, 255, 255);
-    /*background-image: url("https://s8149.pcdn.co/wp-content/uploads/2013/08/villageNight-923x372.jpg");*/
     background-repeat: no-repeat;
     background-size: 100% 100%;
     margin: 0px;
+}
+
+#wd {
+    display: inline-flex;
+    width: 100%;
+    height: 100%;
 }
 
 .shandon, .atascadero, .callender, .creston, .estrella, .guadalupe, .lakeNacimiento, .losAlamos, .miles, .orcutt, .sanLuisObispoCounty, .sanMiguel, .santaMargarita, .templeton, .vandenbergVillage, .villageMobileHomePark {
@@ -143,7 +131,7 @@ body {
 }
 
 footer {
-    font: size 30;
+    font-size: 1.5vw;
     font-family: Arial, Helvetica, sans-serif;
     padding-bottom: 25px;
     padding-top: 25px;
@@ -153,162 +141,152 @@ footer {
     margin: 0px;
 }
 
-.transbox {
-    margin: 30px;
-    background-color: #151414;
-    border: 1px solid black;
-    opacity: 0.8;
-    width: 37%;
-    height: 250px;
-    filter: alpha(opacity=30);
-    margin: auto;
-    border-radius: 100px;
-    display: flex;
-    max-height: 250px;
-    max-width: 500px;
-    min-width: 468px;
-    min-height: 250px;
-}
-
 .temperature {
-    font-size: 45px;
+    font-size: 4vw;
     text-shadow: 2px 2px 4px #000000;
-    margin: 0 0 0 0;
+    margin: 0;
 }
 
 .humidity {
-    font-size: 15px;
+    font-size: 1.5vw;
     text-shadow: 2px 2px 4px #000000;
     margin: 0;
 }
 
 .pressure {
-    font-size: 15px;
+    font-size: 1.5vw;
     text-shadow: 2px 2px 4px #000000;
     margin: 0;
 }
 
 .timeStamp {
-    font-size: 15px;
+    text-align: center;
+    font-size: 2vw;
     text-shadow: 2px 2px 4px #000000;
     margin: 0;
 }
 
 .tempMin {
-    font-size: 15px;
+    font-size: 1.5vw;
     text-shadow: 2px 2px 4px #000000;
     margin: 0;
 }
 
 .tempMax {
-    font-size: 15px;
+    font-size: 1.5vw;
     text-shadow: 2px 2px 4px #000000;
     margin: 0;
 }
 
 .windSpeed {
-    margin: 35px 0 0 0;
-    font-size: 18px;
+    margin: 0;
+    font-size: 2.0vw;
     text-shadow: 2px 2px 4px #000000;
 }
 
 .windDirection {
-    font-size: 15px;
+    font-size: 2.0vw;
     text-shadow: 2px 2px 4px #000000;
     margin: 0;
 }
 
 .rain {
-    font-size: 15px;
+    font-size: 1.5vw;
     text-shadow: 2px 2px 4px #000000;
     margin: 0;
 }
 
 .snow {
-    font-size: 15px;
+    font-size: 1.5vw;
     text-shadow: 2px 2px 4px #000000;
     margin: 0;
 }
 
 .headerStylez {
     text-align: center;
+    font-size: 7vw;
+    padding-top: 2%;
+    padding-bottom: 2%;
 }
 
 #tempDiv {
-    height: 200px;
-    width: 235px;
-    position: relative;
-    /*float: left;*/
+    position: fixed;
+    top: 33vh;
+    left: 75vw;
+    width: 22vw;
+    height: 28vh;
     display: block;
-    min-height: 200px;
-    min-width: 235px;
-    max-height: 210px;
-    max-width: 235px;
+    background: rgba(0,0,0,0.6);
+    border-radius: 25%;
 }
 
 #tempDiv i {
-    margin-left: 40px;
-    font-size: 30px;
+    margin-left: 4vw;
+    font-size: 3vw;
 }
 
 #tempDiv p {
-    margin-left: 40px;
+    margin-left: 4vw;
 }
 
 #windDiv {
-    height: 200px;
-    width: 235px;
-    position: relative;
-    /*float: right;*/
+    position: fixed;
+    top: 33vh;
+    left: 1vw;
+    width: 26vw;
+    height: 23vh;
     display: block;
-    min-height: 200px;
-    min-width: 235px;
-    max-height: 210px;
-    max-width: 235px;
+    background: rgba(0,0,0,0.6);
+    border-radius: 25%;
+}
+
+#dataTime {
+    position: fixed;
+    top: 65vh;
+    left: 38vw;
+    width: 25vw;
+    display: block;
+    background: rgba(0,0,0,0.6);
+    border-radius: 25%;
 }
 
 #windDiv i {
-    margin-left: 50px
+    margin-left: 11vw;
+    font-size: 5vw;
 }
 
 #windDiv p {
-    margin-left: 15px;
+    margin-left: 3vw;
 }
 
 #humPressureDiv {
-    left: -470px;
-    top: 180px;
-    height: 50px;
-    width: 235px;
-    position: relative;
-    /*float: left;*/
+    position: fixed;
+    top: 52vh;
+    left: 30vw;
+    width: 20vw;
+    height: 7.5vh;
     display: block;
-    min-height: 50px;
-    min-width: 235px;
-    max-height: 210px;
-    max-width: 235px;
+    background: rgba(0,0,0,0.6);
+    border-radius: 25%;
 }
 
 #humPressureDiv p {
-    margin-left: 40px;
+    margin-left: 2vw;
 }
 
 #rainAndSnowDiv {
-    left: -470px;
-    top: 180px;
-    height: 50px;
-    width: 235px;
-    position: relative;
-    /*float: right;*/
+    position: fixed;
+    top: 52vh;
+    left: 58vw;
+    width: 15vw;
+    height: 7.5vh;
     display: block;
-    min-height: 50px;
-    min-width: 235px;
-    max-height: 210px;
-    max-width: 235px;
+    background: rgba(0,0,0,0.6);
+    border-radius: 25%;
 }
 
 #rainAndSnowDiv p {
-    margin-left: 15px;
+    margin-left: 2vw;
 }
 
 .dropdown {
@@ -324,7 +302,6 @@ footer {
 .fToC {
     position: relative;
     display: inline-block;
-    /*border: 0;*/
     height: 23px;
     width: 30px;
     margin-top: 10px;
