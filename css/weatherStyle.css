@@ -1,6 +1,10 @@
 body {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    min-width:320px;
+    max-width: 1680px;
+    height: 100vh;
+    min-height: 480px;
+    max-height: 1280px;
     padding: 0px;
     margin: auto;
     background-color: rgba(100,128,206,1);
@@ -9,9 +13,11 @@ body {
 #headMenu {
     display: flex;
     background-color: rgba(100,128,206,1);
+    height: 15vh;
+    min-height: 70px;
 }
 .mainHeader {
-    margin: 0;
+    margin: auto;
     font-size: 6vw;
     font-family: Arial, Helvetica, sans-serif;
     padding-top: 25px;
@@ -21,8 +27,9 @@ body {
 }
 
 #main {
-    width: 100vw;
-    height: 60vh;
+    width: 100%;
+    height: 70vh;
+    min-height: 380px;
 }
 
 #backgroundId {
@@ -33,7 +40,7 @@ body {
     padding-bottom: 0px;
     padding-top: 0px;
     text-shadow: 2px 2px 4px #000000;
-    color: gainsboro;
+    color: white;
     background-color: rgb(255, 255, 255);
     background-repeat: no-repeat;
     background-size: 100% 100%;
@@ -41,7 +48,6 @@ body {
 }
 
 #wd {
-    display: inline-flex;
     width: 100%;
     height: 100%;
 }
@@ -133,28 +139,30 @@ body {
 footer {
     font-size: 1.5vw;
     font-family: Arial, Helvetica, sans-serif;
-    padding-bottom: 25px;
-    padding-top: 25px;
+    padding-bottom: 5px;
+    padding-top: 5px;
     text-align: center;
     color: white;
     background-color: rgba(100,128,206,1);
     margin: 0px;
+    height: 10vw;
+    min-height: 70px;
 }
 
 .temperature {
-    font-size: 4vmin;
+    font-size: 60px;
     text-shadow: 2px 2px 4px #000000;
     margin: 0;
 }
 
 .humidity {
-    font-size: 2vmin;
+    font-size: 15px;
     text-shadow: 2px 2px 4px #000000;
     margin: 0;
 }
 
 .pressure {
-    font-size: 2vmin;
+    font-size: 15px;
     text-shadow: 2px 2px 4px #000000;
     margin: 0;
 }
@@ -167,37 +175,37 @@ footer {
 }
 
 .tempMin {
-    font-size: 1.5vmin;
+    font-size: 20px;
     text-shadow: 2px 2px 4px #000000;
     margin: 0;
 }
 
 .tempMax {
-    font-size: 1.5vmin;
+    font-size: 20px;
     text-shadow: 2px 2px 4px #000000;
     margin: 0;
 }
 
 .windSpeed {
     margin: 0;
-    font-size: 2vmin;
+    font-size: 25px;
     text-shadow: 2px 2px 4px #000000;
 }
 
 .windDirection {
-    font-size: 2vmin;
+    font-size: 25px;
     text-shadow: 2px 2px 4px #000000;
     margin: 0;
 }
 
 .rain {
-    font-size: 2vmin;
+    font-size: 15px;
     text-shadow: 2px 2px 4px #000000;
     margin: 0;
 }
 
 .snow {
-    font-size: 2vmin;
+    font-size: 15px;
     text-shadow: 2px 2px 4px #000000;
     margin: 0;
 }
@@ -210,19 +218,17 @@ footer {
 }
 
 #tempDiv {
-    position: fixed;
-    top: 33vh;
-    left: 75vw;
     width: 22vw;
-    height: 19vh;
-    display: block;
+    height: 26vh;
+    float: right;
+    margin-right: 10px;
     background: rgba(0,0,0,0.3);
     border-radius: 25%;
 }
 
 #tempDiv i {
     margin-left: 4vmin;
-    font-size: 3vmin;
+    font-size: 60px;
 }
 
 #tempDiv p {
@@ -230,29 +236,27 @@ footer {
 }
 
 #windDiv {
-    position: fixed;
-    top: 33vh;
-    left: 1vw;
+    margin-left: 10px;
     width: 25vw;
     height: 19vh;
-    display: block;
+    float: left;
     background: rgba(0,0,0,0.3);
     border-radius: 25%;
 }
 
 #dataTime {
-    position: fixed;
-    top: 65vh;
-    left: 38vw;
-    width: 25vw;
-    display: block;
+    margin-left: 10px;
+    margin-top: 50px;
+    float: left;
+    clear: both;
+    width: 30vw;
     background: rgba(0,0,0,0.3);
     border-radius: 25%;
 }
 
 #windDiv i {
-    margin-left: 11vmin;
-    font-size: 5vmin;
+    margin-left: 18vmin;
+    font-size: 60px;
 }
 
 #windDiv p {
@@ -260,12 +264,12 @@ footer {
 }
 
 #humPressureDiv {
-    position: fixed;
-    top: 52vh;
-    left: 30vw;
-    width: 21vw;
+    width: 19vw;
     height: 7vh;
-    display: block;
+    float: left;
+    clear: right;
+    margin-top: 20px;
+    margin-left: 120px;
     background: rgba(0,0,0,0.3);
     border-radius: 25%;
 }
@@ -275,12 +279,12 @@ footer {
 }
 
 #rainAndSnowDiv {
-    position: fixed;
-    top: 52vh;
-    left: 58vw;
-    width: 20vw;
+    width: 16vw;
     height: 7vh;
-    display: block;
+    float: right;
+    clear: right;
+    margin-top: 20px;
+    margin-right: 120px;
     background: rgba(0,0,0,0.3);
     border-radius: 25%;
 }
@@ -290,8 +294,10 @@ footer {
 }
 
 .dropdown {
-    position: relative;
-    display: inline-block;
+    position: fixed;
+    display: block;
+    top: 0%;
+    left: 85vw;
     height: 20px;
     width: 20px;
     padding: 10px;
@@ -300,8 +306,10 @@ footer {
 }
 
 .fToC {
-    position: relative;
-    display: inline-block;
+    position: fixed;
+    display: block;
+    top: 0%;
+    left: 90vw;
     height: 23px;
     width: 30px;
     margin-top: 10px;
@@ -357,50 +365,300 @@ footer {
     color: white;
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (min-width: 1450px) {
     #tempDiv {
-        position: fixed;
-        top: 33vh;
-        left: 75vw;
-        width: 22vw;
-        height: 13vh;
-        display: block;
-        background: rgba(0,0,0,0.3);
-        border-radius: 25%;
+        left: 70vw;
     }
 
     #windDiv {
-        position: fixed;
-        top: 33vh;
-        left: 1vw;
-        width: 25vw;
-        height: 13vh;
-        display: block;
-        background: rgba(0,0,0,0.3);
-        border-radius: 25%;
+        left: 7vw;
     }
 }
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 1250px) {
+
+    #tempDiv i {
+        font-size: 50px;
+    }
+
+    .temperature {
+        font-size: 50px;
+    }
+
+    #windDiv i {
+        font-size: 50px;
+    }
+
+    .windSpeed {
+        font-size: 22px;
+    }
+    
+    .windDirection {
+        font-size: 22px;
+    }
+}
+@media screen and (max-width: 1050px) {
+    #tempDiv i {
+        font-size: 40px;
+    }
+
+    .temperature {
+        font-size: 40px;
+    }
+
+    #windDiv i {
+        margin-left: 15vmin;
+        font-size: 40px;
+    }
+
+    .windSpeed {
+        font-size: 17px;
+    }
+    
+    .windDirection {
+        font-size: 17px;
+    }
+}
+
+@media screen and (max-width: 850px) {
     #tempDiv {
-        position: fixed;
-        top: 30vh;
-        left: 75vw;
-        width: 22vw;
-        height: 20vh;
-        display: block;
-        background: rgba(0,0,0,0.3);
-        border-radius: 25%;
+        height: 22vh;
+    }
+
+    #tempDiv i {
+        font-size: 30px;
+    }
+
+    .temperature {
+        font-size: 30px;
+    }
+
+    .tempMin {
+        font-size: 15px;
+    }
+    
+    .tempMax {
+        font-size: 15px;
     }
 
     #windDiv {
-        position: fixed;
-        top: 30vh;
-        left: 1vw;
-        width: 25vw;
-        height: 19vh;
-        display: block;
-        background: rgba(0,0,0,0.3);
-        border-radius: 25%;
+        height: 17vh;
+    }
+
+    #windDiv i {
+        margin-left: 12vmin;
+        font-size: 30px;
+    }
+
+    .windSpeed {
+        font-size: 13px;
+    }
+    
+    .windDirection {
+        font-size: 13px;
+    }
+
+    .humidity {
+        font-size: 11px;
+    }
+    
+    .pressure {
+        font-size: 11px;
+    }
+
+    .rain {
+        font-size: 11px;
+    }
+    
+    .snow {
+        font-size: 11px;
+    }
+
+    .dropdown {
+        left: 83vw;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    #tempDiv {
+        height: 18vh;
+    }
+
+    #tempDiv i {
+        font-size: 20px;
+    }
+
+    .temperature {
+        font-size: 20px;
+    }
+
+    .tempMin {
+        font-size: 10px;
+    }
+    
+    .tempMax {
+        font-size: 10px;
+    }
+
+    #windDiv {
+        width: 30vw;
+        height: 16vh;
+    }
+
+    #windDiv i {
+        margin-left: 10vmin;
+        font-size: 30px;
+    }
+
+    .windSpeed {
+        font-size: 11px;
+    }
+    
+    .windDirection {
+        font-size: 11px;
+    }
+
+    #humPressureDiv {
+        width: 21vw;
+    }
+
+    .humidity {
+        font-size: 9px;
+    }
+    
+    .pressure {
+        font-size: 9px;
+    }
+
+    #rainAndSnowDiv {
+        width: 20vw;
+    }
+
+    .rain {
+        font-size: 9px;
+    }
+    
+    .snow {
+        font-size: 9px;
+    }
+
+    .dropdown {
+        left: 79vw;
+    }
+}
+@media screen and (max-width: 450px) {
+    #tempDiv {
+        height: 16vh;
+    }
+
+    #tempDiv i {
+        font-size: 15px;
+    }
+
+    .temperature {
+        font-size: 15px;
+    }
+
+    .tempMin {
+        font-size: 8px;
+    }
+    
+    .tempMax {
+        font-size: 8px;
+    }
+
+    #windDiv {
+        width: 30vw;
+        height: 14vh;
+    }
+
+    #windDiv i {
+        margin-left: 10vmin;
+        font-size: 30px;
+    }
+
+    .windSpeed {
+        font-size: 10px;
+    }
+    
+    .windDirection {
+        font-size: 10px;
+    }
+
+    #humPressureDiv {
+        width: 22vw;
+        margin-left: 80px;
+    }
+
+    #rainAndSnowDiv {
+        width: 21vw;
+        margin-right: 80px;
+    }
+
+    .dropdown {
+        left: 72vw;
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .mainHeader {
+        font-size: 5vw;
+        padding-top: 15px;
+    }
+
+    #tempDiv {
+        height: 22vh;
+    }
+
+    #tempDiv i {
+        font-size: 15px;
+    }
+
+    .temperature {
+        font-size: 15px;
+    }
+
+    .tempMin {
+        font-size: 8px;
+    }
+    
+    .tempMax {
+        font-size: 8px;
+    }
+
+    #windDiv {
+        width: 38vw;
+        height: 20vh;
+    }
+
+    #windDiv i {
+        margin-left: 15vmin;
+        font-size: 30px;
+    }
+
+    .windSpeed {
+        font-size: 10px;
+    }
+    
+    .windDirection {
+        font-size: 10px;
+    }
+
+    #humPressureDiv {
+        margin-left: 10px;
+        width: 30vw;
+    }
+
+    #rainAndSnowDiv {
+        margin-right: 10px;
+        width: 30vw;
+    }
+
+    #dataTime {
+        top: 65vh;
+    }
+
+    .dropdown {
+        left: 70vw;
     }
 }
