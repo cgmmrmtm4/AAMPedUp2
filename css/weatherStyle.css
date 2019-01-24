@@ -1,6 +1,6 @@
 body {
     width: 100vw;
-    min-width:320px;
+    min-width:310px;
     max-width: 1680px;
     height: 100vh;
     min-height: 480px;
@@ -13,8 +13,8 @@ body {
 #headMenu {
     display: flex;
     background-color: rgba(100,128,206,1);
-    height: 15vh;
-    min-height: 70px;
+    height: 16vh;
+    min-height: 100px;
 }
 .mainHeader {
     margin: auto;
@@ -29,7 +29,7 @@ body {
 #main {
     width: 100%;
     height: 70vh;
-    min-height: 380px;
+    min-height: 370px;
 }
 
 #backgroundId {
@@ -145,8 +145,8 @@ footer {
     color: white;
     background-color: rgba(100,128,206,1);
     margin: 0px;
-    height: 10vw;
-    min-height: 70px;
+    height: 5vw;
+    min-height: 45px;
 }
 
 .temperature {
@@ -294,25 +294,24 @@ footer {
 }
 
 .dropdown {
-    position: fixed;
-    display: block;
+    position: absolute;
     top: 0%;
     left: 85vw;
     height: 20px;
     width: 20px;
-    padding: 10px;
+    padding: 5px;
     background-color: rgba(100,128,206,1);
     
 }
 
 .fToC {
-    position: fixed;
-    display: block;
+    position: absolute;
     top: 0%;
     left: 90vw;
     height: 23px;
     width: 30px;
-    margin-top: 10px;
+    padding: 5px;
+    margin-top: 5px;
     background-color: white;
 }
 
@@ -546,119 +545,163 @@ footer {
         left: 79vw;
     }
 }
-@media screen and (max-width: 450px) {
+
+@media screen and (max-width: 480px) {
     #tempDiv {
-        height: 16vh;
+        margin-top: 50px;
+        margin-right: 25px;
+        width: 140px;
+        height: 130px;
     }
 
     #tempDiv i {
-        font-size: 15px;
+        font-size: 25px;
     }
 
     .temperature {
-        font-size: 15px;
+        font-size: 25px;
     }
 
     .tempMin {
-        font-size: 8px;
+        font-size: 11px;
     }
     
     .tempMax {
-        font-size: 8px;
+        font-size: 11px;
     }
 
     #windDiv {
-        width: 30vw;
-        height: 14vh;
+        margin-top: 50px;
+        margin-left: 25px;
+        width: 185px;
+        height: 120px;
     }
 
     #windDiv i {
-        margin-left: 10vmin;
-        font-size: 30px;
+        margin-left: 70px;
+        font-size: 50px;
     }
 
     .windSpeed {
-        font-size: 10px;
+        font-size: 15px;
     }
     
     .windDirection {
-        font-size: 10px;
+        font-size: 15px;
     }
 
     #humPressureDiv {
-        width: 22vw;
+        width: 130px;
+        height: 35px;
         margin-left: 80px;
     }
 
+    .humidity {
+        margin-top: 5px;
+        font-size: 12px;
+    }
+
+    .pressure {
+        font-size: 12px;
+    }
+
     #rainAndSnowDiv {
-        width: 21vw;
+        width: 120px;
+        height: 35px;
         margin-right: 80px;
     }
 
+    .rain {
+        margin-top: 5px;
+        font-size: 12px;
+    }
+
+    .snow {
+        font-size: 12px;
+    }
+
+    .fToC {
+        left: 400px;
+    }
+
+    .timeStamp {
+        font-size: 18px;
+        width: 210px;
+    }
     .dropdown {
-        left: 72vw;
+        left: 345px;
     }
 }
 
 @media screen and (max-width: 320px) {
     .mainHeader {
-        font-size: 5vw;
+        font-size: 20px;
         padding-top: 15px;
     }
 
     #tempDiv {
-        height: 22vh;
+        margin-top: 30px;
+        margin-right: 10px;
+        height: 120px;
+        width: 110px;
     }
 
     #tempDiv i {
-        font-size: 15px;
+        font-size: 20px;
     }
 
     .temperature {
-        font-size: 15px;
+        font-size: 20px;
     }
 
     .tempMin {
-        font-size: 8px;
+        font-size: 11px;
     }
     
     .tempMax {
-        font-size: 8px;
+        font-size: 11px;
     }
 
     #windDiv {
-        width: 38vw;
-        height: 20vh;
+        margin-top: 30px;
+        margin-left: 10px;
+        width: 155px;
+        height: 100px;
     }
 
     #windDiv i {
-        margin-left: 15vmin;
-        font-size: 30px;
+        margin-left: 60px;
+        font-size: 40px;
     }
 
     .windSpeed {
-        font-size: 10px;
+        font-size: 13px;
     }
     
     .windDirection {
-        font-size: 10px;
+        font-size: 13px;
     }
 
     #humPressureDiv {
-        margin-left: 10px;
-        width: 30vw;
+        margin-left: 20px;
+        width: 130px;
     }
 
     #rainAndSnowDiv {
-        margin-right: 10px;
-        width: 30vw;
+        margin-right: 20px;
+        width: 110px;
     }
 
-    #dataTime {
-        top: 65vh;
+    .timeStamp {
+        font-size: 13px;
+        width: 140px;
+    }
+
+    .fToC {
+        left: 280px;
     }
 
     .dropdown {
-        left: 70vw;
+        left: 225px;
     }
 }
