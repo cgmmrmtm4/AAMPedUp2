@@ -204,9 +204,9 @@ function updateRainSnowDiv(amt, type) {
         }
     } else {
         if (!showMetric) {
-            cityRainLevel.innerHTML = type + ": " + amt + " inches";
+            cityLevel.innerHTML = type + "[1h]" + ": " + amt["1h"] + " inches";
         } else {
-            cityRainLevel.innerHTML = type + ": " + convert2SI("inches2MM", amt) + " mm";
+            cityLevel.innerHTML = type + "[1h]" + ": " + convert2SI("inches2MM", amt["1h"]) + " mm";
         }
     }
 }
